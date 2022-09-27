@@ -1,0 +1,108 @@
+/*
+	autore: Nicola Peanut
+*/
+
+body{
+	font-family: sans-serif;
+	background-color: white;
+}
+
+header, #wrapper, footer{
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+}
+
+
+#wrapper{
+	background-color: #dfdfdf;
+	text-align: left;
+	padding: 1.5em;
+	border: 1px dashed #CCC;
+}
+
+
+/* formattazione */
+/* 10px = 1.0em */
+
+h1, h2, h3, h4, h5{
+	color: #311b92;
+	font-family: 'Dancing Script', cursive;
+}
+
+small{
+	font-size: 80%;
+}
+
+h1{
+	font-size: 2.4em;
+	margin: 1.0em 0;
+}
+
+h2{
+	font-size: 1.8em;
+	margin: 0.5em 0:
+}
+
+p{
+	margin: 0.25em 0;
+}
+
+ul, ol{
+	margin: 0.25em 1.5em;
+	padding: 0.5em;
+}
+
+ul li{
+	list-style-type: square;
+}
+
+/*mia roba*/
+#principale{
+	text-align: center;
+}
+
+li{
+	text-align:center;
+	display: inline-block;
+	margin: 10px;
+}
+ul{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+/*MENU DI NAVIGAZIONE*/
+
+nav ul{
+	text-align: center;
+}
+
+nav ul li{
+	display: inline-block;
+}
+
+
+fieldset{
+	border: 1px dotted #666;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+legend{
+	color: #666666;
+}
+
+/*stili per la form*/
+
+label, input{
+	display: inline-block;
+	line-height: 1.8em;
+	margin: 0.5em 0;
+}
+input{
+	border: 1.2em;
+	margin: 1.1em;
+}
