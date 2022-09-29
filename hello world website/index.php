@@ -14,14 +14,9 @@
 		
 			<h1 id="principale">Peanut</h1>
 			
-			<nav>
-				<ul>
-					<li><a>HomePage</a></li>
-					<li><a href="chisono.html">Chi sono</a></li>
-					<li><a href="Portfolio.html">Portfolio</a></li>
-					<li><a href="Simone.html">Simone</a></li>
-				</ul>
-			</nav>
+			<?php
+                include "nav.php";
+            ?>
 				
 		</header>
 		<main>
@@ -49,7 +44,7 @@
 						<labe for="cognome">cognome</labe>
 						<input type="text" id="cognome"  name="cognome">
 						<br/>
-						genere
+						Genere
 						<input type="radio" id="maschile" name="genere" value="maschile">
 						<label for="maschile">maschile</label>
 						
@@ -77,7 +72,6 @@
 
 				<hr>
 				<h2>Ecco i dati inviati: </hr>
-
 					<?php
 
 						if($_SERVER["REQUEST_METHOD"] == "POST"){

@@ -6,9 +6,9 @@
 		
 		
         <?php
-            /*
+            
             include 'header.php';
-            */
+            
         ?>
 		
 	</head>
@@ -17,14 +17,9 @@
 		
 			<h1 id="principale">Peanut</h1>
 			
-			<nav>
-				<ul>
-					<li><a href="index.html">HomePage</a></li>
-					<li><a href="chisono.html">Chi sono</a></li>
-					<li><a href="Portfolio.html">Portfolio</a></li>
-					<li><a href="Simone.html">Simone</a></li>
-				</ul>
-			</nav>
+			<?php
+                include 'nav.php';
+            ?>
 				
 		</header>
 		<main>
@@ -40,19 +35,34 @@
 						un campo di testo per un breve messaggio
 						Raggruppiamo i dati anagrafici e separatamente i dati sugli interessi personali
 				-->
+                <!-- Contatti con form -->
 				<h2>contatti</h2>
-				<from action="" method="">
+				<form action="<?php $_SERVER["PHP_SELF"]?>" method="GET">
 					<fieldset>
 						
-						<legedn>Dati anagrafici:</legedn>
+						<legend>Dati anagrafici:</legend>
 						<br>
-						<labe for="nome">nome</labe>
+                        <!-- nome cognome, provincia  e genere -->
+						<label for="nome">nome</label>
 						<input type="text" id="nome"  name="nome">
 						<br/>
-						<labe for="cognome">cognome</labe>
+						
+                        <label for="cognome">cognome</label>
 						<input type="text" id="cognome"  name="cognome">
-						<br/>
-						genere
+						
+                        <br/>
+                        
+                        <label for="provincia">Indica la provincia di nascita:</label>
+                        
+                        <select id="provincia" name="provincia">
+                            <option value="ud">UD</option>
+                            <option value="ts">TS</option>
+                            <option value="go">GO</option>
+                            <option value="pn">PN</option>
+                        </select>
+                        
+                        <br>
+						Genere:
 						<input type="radio" id="maschile" name="genere" value="maschile">
 						<label for="maschile">maschile</label>
 						
@@ -67,16 +77,79 @@
 						<input type="e-mail" name="email" id="email">
 						<br>
 
+
 					</fieldset>
+                    <h2>Interessi</h2>
 					<fieldset>
 						
-						<legedn>Interessi:</legedn>
-
+						<legend>Interessi:</legend>
+                        <!-- <label for="Interessi">Interessi:</label> -->
+						<input type="checkbox" id="interessi"  name="interessi" value="sport"> <label for="sport">Sport</label> <br>
+                        <input type="checkbox" id="interessi"  name="interessi" value="musica"> <label for="musica">Musica</label> <br>
+                        <input type="checkbox" id="interessi"  name="interessi" value="arte"> <label for="arte">Arte</label> <br>
+                        
 					</fieldset>
 				
 					<input type="submit" value="Invia i miei dati">
 
-				</from>
+				</form>
+                <hr>
+                <h2>Ecco i dati inviati: </h2>
+                <hr>
+					<?php
+                        
+						if($_SERVER["REQUEST_METHOD"] == "GET"){
+                            
+                            if(isset($_REQUEST['nome'])){
+                                $nome = $_REQUEST['nome'];
+                                echo "il nome inserito è ".$nome;
+                            }else{
+                                echo "manco il nome, inseriscilo!";
+                            }
+                            echo "<br>";
+                            
+                            if(isset($_REQUEST['cognome'])){
+                                $cognome = $_REQUEST['cognome'];
+                                echo "il cognome inserito è: " . $cognome;
+                            }else{
+                                echo "manca il cognome, inseriscilo!";
+                            }
+                            echo "<br>";
+                            
+                            if(isset($_REQUEST['genere'])){
+                                $genere = $_REQUEST['genere'];
+                                echo "il genere inserito è: " . $genere;
+                            }else{
+                                echo "manca il genere, inseriscilo!";
+                            }
+                            echo "<br>";
+                            
+                            if(isset($_REQUEST['provincia'])){
+                                $provincia = $_REQUEST['provincia'];
+                                echo "la provincia selezionata è: " . $provincia;
+                            }else{
+                                echo "manca la provincia, inseriscila!";
+                            }
+                            echo "<br>";
+                            
+                            if(isset($_REQUEST['email'])){
+                                $email = $_REQUEST['email'];
+                                echo "l'email inserita è: " . $email;
+                            }else{
+                                echo "manca l'email, inseriscila!";
+                            }
+                            echo "<br>";
+                            
+                            if(isset($_REQUEST['interessi'])){
+                                $interessi = $_REQUEST['interessi'];
+                                echo "interessi inseriti: " . $interessi;
+                            }else{
+                                echo "manca l'interesse, inseriscilo!";
+                            }
+                            echo "<br>";
+						}
+
+					?>
 			</div>
 			
 		</main>
